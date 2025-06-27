@@ -4,6 +4,8 @@ import multer from "multer";
 import dotenv from 'dotenv'
 import { v2 as cloudinary } from 'cloudinary';
 import Users from "./models/users.js";
+import { countReset } from "console";
+import cors from "cors"
 
 const app = express()
 const upload = multer({ storage: multer.memoryStorage() });
@@ -56,6 +58,8 @@ app.post("/api/submit", async (req, res) => {
     res.status(500).json({ success: false, message: error })
   }
 })
+
+app.use(cors())
 
 app.listen(5000, () => {
   connectDB()
