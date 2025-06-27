@@ -5,20 +5,12 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/",
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-    sourcemap: false,
-    rollupOptions: {
-      output: {
-        manualChunks: undefined,
-      }
-    }
-  },
   server: {
     proxy: {
-      "/api": "http://localhost:5000"
+      "/api": {
+        target: 'http://localhost:5000',
+        changeOrigin: true
+      }
     }
   }
 })

@@ -58,7 +58,7 @@ const handleImageUpload = async (file) => {
     formData.append('image', file);
 
     try {
-      const response = await fetch('/api/upload', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/upload`, {
         method: 'POST',
         body: formData,
       });
@@ -216,7 +216,7 @@ const handleImageUpload = async (file) => {
   } = form;
 
   try {
-    const response = await fetch('/api/submit', {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/submit`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
