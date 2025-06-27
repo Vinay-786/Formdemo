@@ -1,0 +1,15 @@
+{
+  "name": "assignemtfrequent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm -r -parallel --aggregate-output dev",
+    "build:backend": "pnpm --filter backend build",
+    "start:backend": "pnpm --filter backend start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.7.1"
+}
