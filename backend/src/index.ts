@@ -10,6 +10,7 @@ import cors from "cors"
 const app = express()
 const upload = multer({ storage: multer.memoryStorage() });
 app.use(express.json())
+app.use(cors())
 dotenv.config()
 
 cloudinary.config({
@@ -59,7 +60,6 @@ app.post("/api/submit", async (req, res) => {
   }
 })
 
-app.use(cors())
 
 app.listen(5000, () => {
   connectDB()
